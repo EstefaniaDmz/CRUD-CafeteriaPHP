@@ -1,0 +1,9 @@
+<?php
+require_once("controlador/loginc.php");
+if(isset($_POST['m'])):    
+    if(method_exists("modeloController",$_POST['m'])):
+        modeloController::{$_POST['m']}();
+    endif;
+else:
+    modeloController::index();
+endif;
